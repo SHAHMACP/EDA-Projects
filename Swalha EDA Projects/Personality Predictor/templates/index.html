@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personality Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input[type=text], input[type=number], select {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type=submit]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Predict Your Personality</h2>
+    <form action="/predict" method="post">
+        <label>Time Spent Alone:</label>
+        <input type="float" name="Time_spent_Alone" required><br><br>
+
+        <label>Stage Fear:</label>
+        <select name="Stage_fear" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        </select><br><br>
+
+        <label>Social Event Attendance:</label>
+        <input type="float" name="Social_event_attendance" required><br><br>
+
+        <label>Going Outside:</label>
+        <input type="float" name="Going_outside" required><br><br>
+
+        <label>Drained After Socializing:</label>
+        <select name="Drained_after_socializing" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        </select><br><br>
+
+        <label>Friends Circle Size:</label>
+        <input type="float" name="Friends_circle_size" required><br><br>
+
+        <label>Post Frequency:</label>
+        <input type="float" name="Post_frequency" required><br><br>
+
+        <input type="submit" value="Predict Personality">
+    </form>
+
+    {% if prediction_text %}
+        <div class="result">
+            {{ prediction_text }}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
+
+</body>
+</html>
