@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personality Prediction</title>
+</head>
+<body>
+    <h2>Enter Personality Traits</h2>
+    <form method="POST" action="/predict">
+        Time Spent Alone: <input type="text" name="Time_spent_Alone"><br><br>
+        Stage Fear:
+        <select name="Stage_fear">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+        Social Event Attendance: <input type="text" name="Social_event_attendance"><br><br>
+        Going Outside: <input type="text" name="Going_outside"><br><br>
+        Drained After Socializing:
+        <select name="Drained_after_socializing">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+        Friends Circle Size: <input type="text" name="Friends_circle_size"><br><br>
+        Post Frequency: <input type="text" name="Post_frequency"><br><br>
+
+    <input type="submit" value="Predict">
+    </form>
+    </form>
+    <h1>{{prediction_text}}
+</body>
+</html>
