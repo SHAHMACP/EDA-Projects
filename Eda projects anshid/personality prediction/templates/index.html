@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personality Prediction</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Predict Your Personality</h2>
+    <form action="/predict" method="post">
+        <label>Time Spent Alone:</label>
+        <input type="number" step="any" name="Time_spent_Alone" required><br><br>
+
+        <label>Stage Fear:</label>
+        <select name="Stage_fear" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label>Social Event Attendance:</label>
+        <input type="number" step="any" name="Social_event_attendance" required><br><br>
+
+        <label>Going Outside:</label>
+        <input type="number" step="any" name="Going_outside" required><br><br>
+
+        <label>Drained After Socializing:</label>
+        <select name="Drained_after_socializing" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label>Friends Circle Size:</label>
+        <input type="number" step="any" name="Friends_circle_size" required><br><br>
+
+        <label>Post Frequency:</label>
+        <input type="number" step="any" name="Post_frequency" required><br><br>
+
+        <input type="submit" value="Predict Personality">
+    </form>
+
+    {% if prediction_text %}
+        <div class="result">
+            <h3>{{ prediction_text }}</h3>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
